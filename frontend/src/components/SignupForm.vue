@@ -96,7 +96,7 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0 5vw;
+    margin: 5vh 5vw;
 }
 
 .form__signup{

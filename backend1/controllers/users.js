@@ -17,7 +17,6 @@ exports.signUp = (req,res,next) => {
             email : email,
             password : hash,
         };
-        console.log(user);
         db.query('INSERT INTO user SET ?', user, (err,result) => {
             if (err) { res.status(400).json({message : "Erreur dans l'insertion de la bd du nouveau user:" + err})}
             res.status(201).json({message: "Utilisateur créé"}) 

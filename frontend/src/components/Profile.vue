@@ -7,7 +7,7 @@
     <div class="profile__content">
         <h2 class="user__name"></h2>
         <button class="profile__logout" @click="logout">Se déconnecter</button>
-        <button class="profile__delete" @click="deleteProfile">Supprimer le profil</button>
+        <button class="profile__delete" @click="deleteProfile">Supprimer mon compte</button>
     </div> 
 </section>
     
@@ -86,6 +86,11 @@ export default {
 </script>
 
 <style scoped>
+
+section{
+    margin: 5vh 0;
+}
+
 .logo{
     width: 30vw;
 }
@@ -100,5 +105,19 @@ export default {
 .profile__delete{
     margin: 5vh 0;
 }
+
+button{
+        margin: 2vh;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        width: 100px;
+        padding: 5px;
+        transition: 0.3s;
+    }
+
+button:hover{
+        border-color: #BA4D55;
+        box-shadow: 0 0 8px 0 #BA4D55;
+    }
 
 </style>

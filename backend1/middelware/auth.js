@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
 
         db.query('SELECT admin FROM user WHERE id_user = ?', decoded.userId, (err, result) => {
             if (err) return res.status(400).json({message:"erreur dans l'insertion du isAdmin dans la requete via auth " + err});
-            // console.log(result[0].admin)
             req.isAdmin = result[0].admin
         })
         next()

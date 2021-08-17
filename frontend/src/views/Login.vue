@@ -1,13 +1,9 @@
 <template>
+<div>
 <Header/>
-<br>
-<br>
-<br>
 <LoginForm/>
-<br>
-<br>
-<br>
 <Footer/>  
+</div>
 </template>
 
 <script>
