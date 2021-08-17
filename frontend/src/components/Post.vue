@@ -104,14 +104,6 @@ export default {
         this.likesCount();
     },
 
-    // computed: {
-    //     datePostTest() {
-    //         let postDate = this.post.date;
-    //         if(this.post != undefined)
-    //         {return postDate.split('T')[0]}
-    //         else {return "date"}
-    //     }
-    // },
 
     methods: {
     isAdmin(){
@@ -140,7 +132,7 @@ export default {
                 }
             }
             )
-            .then(()=>{console.log("showComments "+this.showComments)})
+            .then(()=>{console.log("Connecté")})
             .catch(err => {
                 console.log("requete probalement non authentifiée, redirection vers la page login "+err);
                 this.$router.push('/login')

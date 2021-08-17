@@ -37,7 +37,29 @@ export default {
         }
     },
 
+    created() {
+        this.isLoggedIn();  
+    },
+
     methods: {
+           isLoggedIn(){
+            const token = localStorage.getItem("token");    
+            axios.get("http://localhost:3000/api/posts/all",
+            {
+                headers: {
+                    "content-type":'application/json',
+                    "Authorization" : `Bearer ${token}`                  
+                }
+            }
+            )
+            .then(()=>{console.log("Connecté")})
+            .catch(err => {
+                console.log("requete probalement non authentifiée, redirection vers la page login "+err);
+                this.$router.push('/login')
+                })
+        }
+        
+        ,
         upload(event) {
             this.selectedFile = event.target.files[0]
         }
