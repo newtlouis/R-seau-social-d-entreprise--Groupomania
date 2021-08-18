@@ -17,6 +17,7 @@ exports.signUp = (req,res,next) => {
    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) == false )
    {res.status(400).json({message:'email incorrect '})}
 
+   
     bcrypt
     .hash(password,10)
     .then((hash) => {
@@ -29,8 +30,9 @@ exports.signUp = (req,res,next) => {
             if (err) { res.status(400).json({message : "Erreur dans l'insertion de la bd du nouveau user:" + err})}
             res.status(201).json({message: "Utilisateur créé"}) 
         })
-        .catch(error => res.status(500).json({ message: "erreur dans le hashage:" + error }));    
+            
     })
+    .catch(error => res.status(500).json({ message: "erreur dans le hashage:" + error }));
 
 }
 

@@ -74,7 +74,11 @@ export default {
             }
             )
             .then(() => this.$router.push('/login'))
-            .catch(document.getElementsByClassName("errorSignup")[0].innerHTML = "Votre nom ou votre email ou votre mot de passe est incorrect. Minimum 8 charactères, 1 majuscule, minuscule, 1 chiffre et 1 charactère" )
+            .catch((err) => {
+                console.log("erreur pour l'enregistrement d'un user dans la bd "+err);
+                document.getElementsByClassName("errorSignup")[0].innerHTML = "Votre nom ou votre email ou votre mot de passe est incorrect. Minimum 8 charactères, 1 majuscule, minuscule, 1 chiffre et 1 charactère" 
+            })
+                
         }
     }
     
