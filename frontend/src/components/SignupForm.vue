@@ -9,7 +9,8 @@
         <div class="form__SignUp__header">
                 <h2>Connectez vous</h2>
                 <router-link class="toLogin" :to="`/Login/`">Vous avez déjà un compte ? </router-link>
-            </div>
+        </div>
+        <div class="errorSignup"></div>
 
         <div class="form__signup">
             <div class="form__name">
@@ -73,7 +74,7 @@ export default {
             }
             )
             .then(() => this.$router.push('/login'))
-            .catch((error) => console.log(error) )
+            .catch(document.getElementsByClassName("errorSignup")[0].innerHTML = "Votre nom ou votre email ou votre mot de passe est incorrect. Minimum 8 charactères, 1 majuscule, minuscule, 1 chiffre et 1 charactère" )
         }
     }
     

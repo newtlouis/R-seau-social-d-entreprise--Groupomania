@@ -9,6 +9,14 @@ exports.signUp = (req,res,next) => {
     const name = req.body.name;
     const password = req.body.password;
 
+    // Verification robustesse password
+    if (/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/.test(password) == false )
+    {res.status(400).json({message:'Mot de passe trop faible, minimum: 8 charactères, 1 majuscule, 1 minuscule, 1 chiffre et 1 charactère spécial '})}
+
+   // Verification robustesse email
+   if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) == false )
+   {res.status(400).json({message:'email incorrect '})}
+
     bcrypt
     .hash(password,10)
     .then((hash) => {
