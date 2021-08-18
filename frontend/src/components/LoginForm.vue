@@ -23,7 +23,7 @@
 
             <div class="form__password">
                 <label for="password"><i class="fas fa-lock"></i></label>
-                <input class="password" type="text" placeholder="password">
+                <input class="password" type="password" placeholder="password">
             </div>
             <button class="submit" type="submit">Je valide</button>
 
