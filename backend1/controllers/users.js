@@ -37,8 +37,9 @@ exports.signUp = (req,res,next) => {
 exports.login = (req,res,next) => {
 
     db.query('SELECT * FROM user WHERE email = ?',req.body.email, (err, result) => {
-        if (result === "" || result == undefined) return res.status(401).json({ error: "Utilisateur introuvable" });
-
+        if (result == "" || result == undefined || result == []) {return res.status(401).json({ error: "Utilisateur introuvable" })};
+        console.log(req.body.password);
+        console.log(result);
         bcrypt.compare(req.body.password, result[0].password)
         .then((valid) => {if (!valid) {res.status(400).json({message:"mot de passe incorrect"})}});
 
