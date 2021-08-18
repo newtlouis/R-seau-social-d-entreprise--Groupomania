@@ -11,7 +11,7 @@
             <router-link class="menu" v-if="isLogged()" to="/">Wall</router-link> 
             <router-link class="menu" v-if="isLogged()" to="/louis">Mon compte</router-link> 
             <router-link class="menu" v-if="!isLogged()" to="/login">Login</router-link> 
-            <router-link class="menu" to="/signup">s'inscrire</router-link>
+            <router-link class="menu" v-if="!isLogged()" to="/signup">s'inscrire</router-link>
         </div>
     </div>
        
