@@ -51,3 +51,11 @@ exports.isAdmin = (req,res,next) => {
     })
 
 }
+
+exports.delete = (req,res,next) => {
+    console.log("suppression compte")
+    db.query( 'DELETE FROM user where id_user = ?', req.params.id, (err, result) =>{
+        if (err) { return res.status(400).json({ error: "Le compte n'a pas pu être supprimé" }) }
+        return res.status(200).json({message: 'compte supprimé'});   
+    })
+}

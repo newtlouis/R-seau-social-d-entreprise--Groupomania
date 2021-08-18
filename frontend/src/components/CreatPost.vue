@@ -69,9 +69,6 @@ export default {
             const fd = new FormData();
             fd.append('image',  this.selectedFile);
             fd.append('content',  document.getElementsByClassName("postDescription__content")[0].value);
-            console.log(Array.from(fd));
-            console.log(fd);
-
 
             const token = localStorage.getItem("token");    
 

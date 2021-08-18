@@ -4,22 +4,27 @@ Réseau social d'entreprise -Groupomania
 Prérequis:
 installer node, mysql
 
-Pour lancer le front end:
+FRONTEND:
 
 cd frontend/
-
-# Compiles and hot-reloads for development
 npm run serve
-
 # Compiles and minifies for production
 npm run build
 
-Installation Backend:
-Créer une base de données sous mysql à l'aide du fichier dump groupomania.sql
-Allez dans le répertoire backend/ et modifier le fichier .env avec vos données personnelles.
+BACKEND:
+
+Installer mysql
+Créer une base de données sous mysql à l'aide du fichier groupomania.sql
+
+Allez dans le répertoire backend1/ et modifier le fichier .env avec vos données personnelles.
 
 Pour lancer le backend
 cd backend1/
-
-# Compiles 
 nodemon server
+
+
+CREER UN ADMIN:
+
+Créer un nouvel utilisateur via la page SignUp de l'application Web
+Modifier cet nouvel utilisateur dans Mysql
+Dans Admin, remplacer "N" par "Y"

@@ -60,12 +60,13 @@ export default {
         }
         ,
         deleteProfile(){
-            
+            const token = localStorage.getItem("token");  
             const id = localStorage.getItem('userId');
-            axios.delete("http://localhost:3000/api/user/"+id,
+            axios.delete("http://localhost:3000/api/auth/"+id,
             {
                 headers:{
-                    "content-type": "application/json",
+                   "content-type":'application/json',
+                    "Authorization" : `Bearer ${token}`
                 }
             }
             )
