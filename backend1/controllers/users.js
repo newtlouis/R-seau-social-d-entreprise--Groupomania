@@ -14,8 +14,14 @@ exports.signUp = (req,res,next) => {
     {res.status(400).json({message:'Mot de passe trop faible, minimum: 8 charactères, 1 majuscule, 1 minuscule, 1 chiffre et 1 charactère spécial '})}
 
    // Verification robustesse email
-   if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) == false )
-   {res.status(400).json({message:'email incorrect '})}
+   try {
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) == false )
+    {res.status(400).json({message:'email incorrect '})}
+   } 
+   catch (error) { 
+    console.log("erreur verif robustesse email "+error)
+   }
+   
 
    
     bcrypt

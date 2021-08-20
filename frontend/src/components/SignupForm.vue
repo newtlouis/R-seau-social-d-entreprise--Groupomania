@@ -50,15 +50,9 @@ export default {
 
     methods: {
         signup() {
-            console.log("Louis");
-
-            
-        
             const name = document.getElementsByClassName("name")[0].value;
             const email = document.getElementsByClassName("email")[0].value;
             const password = document.getElementsByClassName("password")[0].value;
-
-            console.log(name);
             
             // Envoie à la BD
             axios.post("http://localhost:3000/api/auth/signup",
@@ -68,7 +62,7 @@ export default {
                 password
             },
             {
-            header: {
+            headers: {
                 "Content-type":"application/json",
                 }
             }
@@ -76,7 +70,7 @@ export default {
             .then(() => this.$router.push('/login'))
             .catch((err) => {
                 console.log("erreur pour l'enregistrement d'un user dans la bd "+err);
-                document.getElementsByClassName("errorSignup")[0].innerHTML = "Votre nom ou votre email ou votre mot de passe est incorrect. Minimum 8 charactères, 1 majuscule, minuscule, 1 chiffre et 1 charactère" 
+                document.getElementsByClassName("errorSignup")[0].innerHTML = "Votre email ou votre mot de passe est incorrect. Mot de passe: minimum 8 charactères, 1 majuscule, minuscule, 1 chiffre et 1 charactère" 
             })
                 
         }
