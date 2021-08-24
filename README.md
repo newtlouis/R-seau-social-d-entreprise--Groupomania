@@ -1,30 +1,47 @@
-Réseau social d'entreprise -Groupomania
+
+# Groupomania - Réseau social d'entreprise
+Création d' un réseau social interne d’entreprise pour le groupe Groupomania
+## Technologies utilisées :
+
+### Back:
+
+NodeJS
+
+Express
+
+mySql
+
+### Front
+Vue.js
+
+axios
+
+## Objectif
 
 
-Prérequis:
-installer node, mysql
+Le projet consiste à construire un réseau social interne pour les employés de Groupomania. 
 
-FRONTEND:
+Le but de cet outil est de faciliter les interactions entre collègues. 
 
-cd frontend/
-npm run serve
-# Compiles and minifies for production
-npm run build
-
-BACKEND:
-
-Installer mysql
-Créer une base de données sous mysql à l'aide du fichier groupomania.sql
-
-Allez dans le répertoire backend1/ et modifier le fichier .env avec vos données personnelles.
-
-Pour lancer le backend
-cd backend1/
-nodemon server
+Le département RH de Groupomania a laissé libre cours à son imagination pour les fonctionnalités du réseau et a imaginé plusieurs briques pour favoriser les échanges entre collègues.
 
 
-CREER UN ADMIN:
+## Serveur de développement local
 
-Créer un nouvel utilisateur via la page SignUp de l'application Web
-Modifier cet nouvel utilisateur dans Mysql
-Dans Admin, remplacer "N" par "Y"
+Prérequis: installer node, mysql
+
+### Front End
+Dans un terminal exécuter `cd frontend` puis `npm run serve` pour avoir accès au serveur de développement. 
+
+Rendez-vous sur `http://localhost:8080/`. 
+
+
+## Back End
+
+Installer mysql Créer une base de données sous mysql à l'aide du fichier groupomania.sql
+
+ et modifier le fichier .env avec vos données personnelles lors de la création de la base de donnée afin de vous y connecter et créer vos tokens d'authentification
+
+Dans un second terminal exécuter `cd backend`
+
+puis lancer le serveur `nodemon server`
